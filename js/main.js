@@ -1,22 +1,25 @@
- // AOS.init({
- // 	duration: 800,
- // 	easing: 'slide'
- // });
+ AOS.init({
+ 	duration: 800,
+ 	easing: 'slide'
+ });
 
 (function($) {
 
 	"use strict";
 
 	$(window).stellar({
-    responsive: false,
+    responsive: true,
     parallaxBackgrounds: true,
     parallaxElements: true,
     horizontalScrolling: false,
-    hideDistantElements: true,
+    hideDistantElements: false,
     scrollProperty: 'scroll',
     horizontalOffset: 0,
-	  verticalOffset: 0,
+	  verticalOffset: 0
   });
+
+  // Scrollax
+  $.Scrollax();
 
 
 	var fullHeight = function() {
@@ -43,27 +46,23 @@
    $.Scrollax();
 
 	var carousel = function() {
-		$('.carousel-work').owlCarousel({
-			autoplay: true,
+		$('.carousel-testimony').owlCarousel({
 			center: true,
 			loop: true,
 			items:1,
 			margin: 30,
-			stagePadding:0,
-			nav: true,
+			stagePadding: 0,
+			nav: false,
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
-					items: 1,
-					stagePadding: 0
+					items: 1
 				},
 				600:{
-					items: 2,
-					stagePadding: 50
+					items: 3
 				},
 				1000:{
-					items: 3,
-					stagePadding: 100
+					items: 3
 				}
 			}
 		});
@@ -103,17 +102,17 @@
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
 
-			if (st > 750) {
+			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
 					navbar.addClass('scrolled');	
 				}
 			} 
-			if (st < 750) {
+			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
 				}
 			} 
-			if ( st > 800 ) {
+			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');	
 				}
@@ -122,7 +121,7 @@
 					sd.addClass('sleep');
 				}
 			}
-			if ( st < 800 ) {
+			if ( st < 350 ) {
 				if ( navbar.hasClass('awake') ) {
 					navbar.removeClass('awake');
 					navbar.addClass('sleep');
@@ -134,27 +133,6 @@
 		});
 	};
 	scrollWindow();
-
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
 
 	
 	var counter = function() {
@@ -249,7 +227,7 @@
 	$('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
-    closeBtnInside: false,
+    closeBtnInside: true,
     fixedContentPos: true,
     mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
      gallery: {
@@ -277,14 +255,12 @@
   });
 
 
-  $('#appointment_date').datepicker({
+  $('.appointment_date').datepicker({
 	  'format': 'm/d/yyyy',
 	  'autoclose': true
 	});
 
-	$('#appointment_time').timepicker();
-
-
+	$('.appointment_time').timepicker();
 
 
 })(jQuery);

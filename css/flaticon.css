@@ -1,8 +1,8 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 08/09/2018 05:20
+  	Creation date: 31/12/2018 05:16
   	*/
-
+  	
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/flaticon/font/Flaticon.eot");
@@ -35,7 +35,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-flower:before { content: "\f100"; }
-.flaticon-cosmetics:before { content: "\f101"; }
-.flaticon-curl:before { content: "\f102"; }
-.flaticon-facial-treatment:before { content: "\f103"; }
+.flaticon-lotus:before { content: "\f100"; }
+.flaticon-candle:before { content: "\f101"; }
+.flaticon-spa:before { content: "\f102"; }
+.flaticon-stone:before { content: "\f103"; }
+.flaticon-massage:before { content: "\f104"; }
+.flaticon-rose:before { content: "\f105"; }
+.flaticon-beauty-treatment:before { content: "\f106"; }
+.flaticon-spa-1:before { content: "\f107"; }
+.flaticon-relax:before { content: "\f108"; }
